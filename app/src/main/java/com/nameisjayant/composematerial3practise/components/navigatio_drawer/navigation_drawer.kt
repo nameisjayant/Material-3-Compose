@@ -135,7 +135,6 @@ fun DrawerHeader(modifier: Modifier) {
         modifier = modifier
             .background(MaterialTheme.colorScheme.secondary)
             .padding(10.dp)
-            // .padding(dimensionResource(id = R.dimen.header_padding))
             .fillMaxWidth()
     ) {
         Icon(
