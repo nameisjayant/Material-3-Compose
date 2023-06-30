@@ -7,6 +7,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.nameisjayant.composematerial3practise.bottom_bar.BottomBarScreen
+import com.nameisjayant.composematerial3practise.bottom_bar.NavigationRailScreen
+import com.nameisjayant.composematerial3practise.bottom_sheet.BottomSheetScaffoldScreen
+import com.nameisjayant.composematerial3practise.bottom_sheet.ModalBottomSheetScreen
 import com.nameisjayant.composematerial3practise.components.navigatio_drawer.ModalNavigationDrawerScreen
 import com.nameisjayant.composematerial3practise.snackbar.SnackBarScreen
 import com.nameisjayant.composematerial3practise.ui.theme.ComposeMaterial3PractiseTheme
@@ -20,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SnackBarScreen()
+                    NavigationRailScreen()
                 }
             }
         }
