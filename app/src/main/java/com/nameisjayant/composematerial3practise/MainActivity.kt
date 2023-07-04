@@ -11,10 +11,13 @@ import com.nameisjayant.composematerial3practise.bottom_bar.BottomBarScreen
 import com.nameisjayant.composematerial3practise.bottom_bar.NavigationRailScreen
 import com.nameisjayant.composematerial3practise.bottom_sheet.BottomSheetScaffoldScreen
 import com.nameisjayant.composematerial3practise.bottom_sheet.ModalBottomSheetScreen
+import com.nameisjayant.composematerial3practise.canvas.CanvasScreen
 import com.nameisjayant.composematerial3practise.components.navigatio_drawer.ModalNavigationDrawerScreen
 import com.nameisjayant.composematerial3practise.gestures.GestureExampleScreen
+import com.nameisjayant.composematerial3practise.inspect_layout.InspectLayoutScreen
 import com.nameisjayant.composematerial3practise.snackbar.SnackBarScreen
 import com.nameisjayant.composematerial3practise.ui.theme.ComposeMaterial3PractiseTheme
+import com.nameisjayant.composematerial3practise.window_insets.WindowInsetExample
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GestureExampleScreen()
+                    CanvasScreen()
                 }
             }
         }
