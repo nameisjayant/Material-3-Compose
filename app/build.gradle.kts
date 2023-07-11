@@ -1,11 +1,34 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
 
-val libs: org.gradle.accessors.dm.LibrariesForLibs by project
 
 android {
+    signingConfigs {
+        val configName = "config"
+        if (rootProject.file("signing-debug.properties").exists()) {
+            val signinDebug = Properties()
+
+            signinDebug.load(FileInputStream(rootProject.file("signing-debug.properties")))
+            getByName("debug") {
+                android.signingConfigs[configName].keyPassword("keyPassword")
+                android.signingConfigs[configName].storePassword("storePassword")
+                android.signingConfigs[configName].storeFile(rootProject.file("storefile"))
+                android.signingConfigs[configName].keyAlias("keyalias")
+            }
+        }
+        create("release") {
+
+        }
+        create("beta") {
+
+        }
+
+    }
     namespace = "com.nameisjayant.composematerial3practise"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
@@ -20,17 +43,41 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
-    buildTypes {
-        getByName("debug") {
+    afterEvaluate {
 
+    }
+
+    buildTypes {
+//        getByName("debug"){
+//
+//        }
+//        getByName("release"){}
+
+//        applicationVariants.all { variant ->
+//            variant.outputs.all {
+//              outputFile = "ddd.apk"
+//            }
+//        }
+
+
+        create("beta") {
+            signingConfig = signingConfigs.getByName("beta")
+            isDebuggable = true
+            applicationIdSuffix = ".beta"
+            versionNameSuffix = "-beta"
         }
-        getByName("release") {
+        release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -72,4 +119,6 @@ dependencies {
     debugImplementation(libs.compose.manifest)
 
     implementation(libs.google.font)
+    implementation(libs.placeholder.material)
+
 }

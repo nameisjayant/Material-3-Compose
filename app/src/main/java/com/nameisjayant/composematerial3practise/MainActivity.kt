@@ -17,6 +17,7 @@ import com.nameisjayant.composematerial3practise.bottom_sheet.BottomSheetScaffol
 import com.nameisjayant.composematerial3practise.bottom_sheet.ModalBottomSheetScreen
 import com.nameisjayant.composematerial3practise.canvas.CanvasScreen
 import com.nameisjayant.composematerial3practise.components.navigatio_drawer.ModalNavigationDrawerScreen
+import com.nameisjayant.composematerial3practise.components.navigatio_drawer.ShimmerEffect
 import com.nameisjayant.composematerial3practise.custom_layouts.AnimatingFabContent
 import com.nameisjayant.composematerial3practise.gestures.GestureExampleScreen
 import com.nameisjayant.composematerial3practise.inspect_layout.InspectLayoutScreen
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BottomSheetScaffoldScreen()
+                    ShimmerEffect()
                 }
             }
         }
