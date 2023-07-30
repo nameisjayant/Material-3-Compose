@@ -15,10 +15,10 @@ android {
 
             signinDebug.load(FileInputStream(rootProject.file("signing-debug.properties")))
             getByName("debug") {
-                android.signingConfigs[configName].keyPassword("keyPassword")
-                android.signingConfigs[configName].storePassword("storePassword")
-                android.signingConfigs[configName].storeFile(rootProject.file("storefile"))
-                android.signingConfigs[configName].keyAlias("keyalias")
+//                android.signingConfigs[configName].keyPassword("keyPassword")
+//                android.signingConfigs[configName].storePassword("storePassword")
+//                android.signingConfigs[configName].storeFile(rootProject.file("storefile"))
+//                android.signingConfigs[configName].keyAlias("keyalias")
             }
         }
         create("release") {
